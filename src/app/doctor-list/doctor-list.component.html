@@ -1,0 +1,38 @@
+<h3 style="color: darkkhaki">Welcome {{userId}}. Please select doctor for appointment. </h3>
+
+<table width="70%">
+  <tr>
+    <td width="50%">
+      <mat-card class="doctor-list">
+        <mat-card-header>
+          <mat-card-title>Doctor List</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+
+          <mat-action-list>
+
+            
+              
+            <button mat-list-item *ngFor="let doctor of doctors" (click)="setAppointment(doctor)">
+      
+              <p *ngIf="doctor">
+                  {{ doctor.doctorName }} 
+                </p>
+            </button>
+         
+
+            </mat-action-list>
+        </mat-card-content>
+      </mat-card>
+    </td>
+    <td width="50%">
+      <app-appointments></app-appointments>
+
+    </td>
+  </tr>
+
+</table>
+
+
+
+<div *ngIf="id%2 == 0"></div>

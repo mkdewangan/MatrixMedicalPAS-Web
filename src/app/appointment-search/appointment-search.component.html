@@ -1,0 +1,29 @@
+
+<mat-card class="appointment-search-card">
+        <mat-card-header>
+          <mat-card-title>Appointment Search</mat-card-title>
+        </mat-card-header>
+        
+        <mat-card-content>
+           
+          <form class="appointment-search-form">
+      
+            <mat-form-field>
+              <input matInput placeholder="Confirmation Code" [(ngModel)]="confCode"  name="confCode" required>
+            </mat-form-field>
+
+            <button mat-raised-button (click)="searchAppointment()" color="primary">Search</button>
+            
+            
+          </form>
+          <div *ngIf="appointment != null">
+              <table>
+           <tr>Patient : {{appointment.patient.patientName}}</tr>
+           <tr>Doctor : {{appointment.doctorId}}</tr>
+           <tr>Datetime : {{appointment.appointmentDatetime}}</tr>
+        </table>
+          </div>
+
+        </mat-card-content>
+        
+      </mat-card>

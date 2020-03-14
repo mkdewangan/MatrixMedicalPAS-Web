@@ -1,0 +1,28 @@
+
+<mat-card class="appointment-card">
+        <mat-card-header>
+          <mat-card-title>Appointment</mat-card-title>
+        </mat-card-header>
+        
+        <mat-card-content>
+           
+          <form class="login-form">
+      
+            <mat-form-field>
+              <input matInput *ngIf="doctor" placeholder="Doctor Name" [(ngModel)]="doctor.doctorName"  name="doctorName" required readonly>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                    <input matInput type="datetime-local" placeholder="Select Appointment Date" [(ngModel)]="appointmentDateTime" name="appointmentTime" required>
+            </mat-form-field>
+          </form>
+
+          <div *ngIf="confCode != null">
+            Your appointment is confirmed. Confirmation Code is {{confCode}}
+          </div> 	
+
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button (click)="createAppointment(doctor)" color="primary">Create</button>
+        </mat-card-actions>
+      </mat-card>

@@ -1,0 +1,34 @@
+<h2>Patient List</h2>
+<!--
+<mat-card class="patient-list">
+        <mat-card-header>
+          <mat-card-title>Patient List</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+
+          <mat-action-list>
+            <mat-list-item *ngFor="let patient of patients">
+              {{ patient.patientName }} 
+            </mat-list-item>
+
+
+            </mat-action-list>
+        </mat-card-content>
+      </mat-card>
+    -->
+
+      <div fxFlex="20" class="patient-list" *ngFor="let patient of patients">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{ patient.patientName }} </mat-card-title>
+            
+          </mat-card-header>
+          
+          <mat-card-content>
+            <p>
+              {{ patient.contact }}
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    
